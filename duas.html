@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الأدعية | قبلة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/duas.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="logo-text">قبلة</span>
+            </a>
+            
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="map.html" class="nav-link">الخريطة</a></li>
+                    <li><a href="tawaf.html" class="nav-link">الطواف</a></li>
+                    <li><a href="sai.html" class="nav-link">السعي</a></li>
+                    <li><a href="duas.html" class="nav-link active">الأدعية</a></li>
+                    <li><a href="services.html" class="nav-link">الخدمات</a></li>
+                    <li><a href="about.html" class="nav-link">عن قبلة</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="langToggle" aria-label="تغيير اللغة">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3v18"/>
+                    </svg>
+                    <span>AR</span>
+                </button>
+                <button class="emergency-btn" id="emergencyBtn" aria-label="طوارئ">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--  Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>مكتبة الأدعية</span>
+            </div>
+            <h1 class="page-title">مكتبة الأدعية والأذكار</h1>
+            <p class="page-subtitle">مجموعة شاملة من الأدعية المأثورة للطواف والسعي</p>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="ابحث عن دعاء...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">الكل</button>
+                    <button class="filter-tab" data-filter="tawaf">الطواف</button>
+                    <button class="filter-tab" data-filter="sai">السعي</button>
+                    <button class="filter-tab" data-filter="general">أذكار عامة</button>
+                    <button class="filter-tab" data-filter="quran">من القرآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duas Grid -->
+    <section class="duas-section">
+        <div class="container">
+            <div class="duas-grid" id="duasGrid">
+                <!-- Tawaf Duas -->
+                <div class="dua-card" data-category="tawaf">
+                    <div class="dua-header">
+                        <span class="dua-badge tawaf">الطواف</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ، اللَّهُمَّ إِيمَانًا بِكَ وَتَصْدِيقًا بِكِتَابِكَ وَوَفَاءً بِعَهْدِكَ وَاتِّبَاعًا لِسُنَّةِ نَبِيِّكَ مُحَمَّدٍ ﷺ</p>
+                        <p class="dua-translation">دعاء استلام الحجر الأسود</p>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ، اللَّهُمَّ إِيمَانًا بِكَ وَتَصْدِيقًا بِكِتَابِكَ وَوَفَاءً بِعَهْدِكَ وَاتِّبَاعًا لِسُنَّةِ نَبِيِّكَ مُحَمَّدٍ ﷺ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dua-card" data-category="tawaf">
+                    <div class="dua-header">
+                        <span class="dua-badge tawaf">الطواف</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+                        <p class="dua-translation">دعاء بين الركن اليماني والحجر الأسود</p>
+                        <small class="dua-source">البقرة: 201</small>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dua-card" data-category="tawaf">
+                    <div class="dua-header">
+                        <span class="dua-badge tawaf">الطواف</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">اللَّهُمَّ طَوَافًا بِبَيْتِكَ حَجًّا مَبْرُورًا، وَسَعْيًا مَشْكُورًا، وَذَنْبًا مَغْفُورًا</p>
+                        <p class="dua-translation">دعاء عام في الطواف</p>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="اللَّهُمَّ طَوَافًا بِبَيْتِكَ حَجًّا مَبْرُورًا، وَسَعْيًا مَشْكُورًا، وَذَنْبًا مَغْفُورًا">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sai Duas -->
+                <div class="dua-card" data-category="sai">
+                    <div class="dua-header">
+                        <span class="dua-badge sai">السعي</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ ۖ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا</p>
+                        <p class="dua-translation">دعاء عند الصفا والمروة</p>
+                        <small class="dua-source">البقرة: 158</small>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ ۖ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dua-card" data-category="sai">
+                    <div class="dua-header">
+                        <span class="dua-badge sai">السعي</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">اللَّهُمَّ اغْفِرْ وَارْحَمْ وَتَجَاوَزْ عَمَّا تَعْلَمُ، إِنَّكَ أَنْتَ الْأَعَزُّ الْأَكْرَمُ</p>
+                        <p class="dua-translation">دعاء في السعي</p>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="اللَّهُمَّ اغْفِرْ وَارْحَمْ وَتَجَاوَزْ عَمَّا تَعْلَمُ، إِنَّكَ أَنْتَ الْأَعَزُّ الْأَكْرَمُ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- General Duas -->
+                <div class="dua-card" data-category="general">
+                    <div class="dua-header">
+                        <span class="dua-badge general">أذكار عامة</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ</p>
+                        <p class="dua-translation">التسبيحات الأربع</p>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dua-card" data-category="general">
+                    <div class="dua-header">
+                        <span class="dua-badge general">أذكار عامة</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</p>
+                        <p class="dua-translation">من أذكار الحج والعمرة</p>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quran Duas -->
+                <div class="dua-card" data-category="quran">
+                    <div class="dua-header">
+                        <span class="dua-badge quran">من القرآن</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ</p>
+                        <p class="dua-translation">دعاء الثبات على الهداية</p>
+                        <small class="dua-source">آل عمران: 8</small>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dua-card" data-category="quran">
+                    <div class="dua-header">
+                        <span class="dua-badge quran">من القرآن</span>
+                        <button class="dua-favorite" aria-label="إضافة للمفضلة">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="dua-content">
+                        <p class="dua-arabic">رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ</p>
+                        <p class="dua-translation">دعاء إقامة الصلاة</p>
+                        <small class="dua-source">إبراهيم: 40</small>
+                    </div>
+                    <div class="dua-actions">
+                        <button class="btn-copy" data-text="رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasbih Counter -->
+    <section class="tasbih-section">
+        <div class="container">
+            <div class="tasbih-widget">
+                <div class="tasbih-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <span>مسبحة إلكترونية</span>
+                </div>
+                <div class="tasbih-display">
+                    <span class="tasbih-count" id="tasbihCount">0</span>
+                </div>
+                <div class="tasbih-controls">
+                    <button class="tasbih-btn" id="tasbihBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span>سبّح</span>
+                    </button>
+                    <button class="tasbih-reset" id="tasbihReset">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="tasbih-presets">
+                    <button class="preset-btn" data-count="33">33</button>
+                    <button class="preset-btn" data-count="34">34</button>
+                    <button class="preset-btn" data-count="100">100</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>قبلة</span>
+                    </a>
+                    <p class="footer-desc">دليلك الروحاني لأداء مناسك الحج والعمرة بسهولة ويسر</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 قبلة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/duas.js"></script>
+</body>
+</html>

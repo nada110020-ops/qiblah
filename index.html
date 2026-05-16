@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قبلة | دليل الطواف والسعي التفاعلي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <svg class="kaaba-loader" viewBox="-10 -10 120 120">
+                <rect x="25" y="30" width="50" height="50" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                <path class="kaaba-cloth" d="M25 35 L75 35" stroke="#1a4d2e" stroke-width="3"/>
+                <circle class="loading-dot" cx="50" cy="15" r="4" fill="#D4AF37"/>
+            </svg>
+            <p class="loading-text">جاري التحميل...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="logo-text">قبلة</span>
+            </a>
+            
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="map.html" class="nav-link">الخريطة</a></li>
+                    <li><a href="tawaf.html" class="nav-link">الطواف</a></li>
+                    <li><a href="sai.html" class="nav-link">السعي</a></li>
+                    <li><a href="duas.html" class="nav-link">الأدعية</a></li>
+                    <li><a href="services.html" class="nav-link">الخدمات</a></li>
+                    <li><a href="about.html" class="nav-link">عن قبلة</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="langToggle" aria-label="تغيير اللغة">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3v18"/>
+                    </svg>
+                    <span>AR</span>
+                </button>
+                <button class="emergency-btn" id="emergencyBtn" aria-label="طوارئ">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="geometric-pattern"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+                <span>دليلك الروحاني للحج والعمرة</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line small-text">مرحباً بك في</span>
+                <span class="title-line large-text">قبلة</span>
+                <span class="title-line small-text">دليلك التفاعلي للطواف والسعي</span>
+            </h1>
+            <p class="hero-description">
+                رفيقك الذكي لأداء مناسك العمرة والحج بسهولة ويسر، 
+                مع إرشادات دقيقة وأدعية مأثورة ومساعدة فورية عند الحاجة
+            </p>
+            <div class="hero-cta">
+                <a href="tawaf.html" class="btn btn-primary">
+                    <span>ابدأ الطواف</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="map.html" class="btn btn-secondary">
+                    <span>الخريطة التفاعلية</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <svg class="kaaba-illustration" viewBox="0 0 400 400">
+                <defs>
+                    <linearGradient id="kaabaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1a4d2e"/>
+                        <stop offset="100%" style="stop-color:#0d2818"/>
+                    </linearGradient>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#D4AF37"/>
+                        <stop offset="50%" style="stop-color:#F4D03F"/>
+                        <stop offset="100%" style="stop-color:#D4AF37"/>
+                    </linearGradient>
+                </defs>
+                <!-- Circular paths representing tawaf -->
+                <circle class="tawaf-ring ring-1" cx="200" cy="200" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                <circle class="tawaf-ring ring-2" cx="200" cy="200" r="90" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                <circle class="tawaf-ring ring-3" cx="200" cy="200" r="120" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                <circle class="tawaf-ring ring-4" cx="200" cy="200" r="150" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                
+                <!-- Kaaba -->
+                <g class="kaaba-main">
+                    <image href="the-kaaba-on-a-transparent-background-png.png" x="0" y="0" width="400" height="400" />
+                </g>
+                
+                <!-- Decorative elements -->
+                <circle class="decor-circle" cx="200" cy="200" r="180" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.2"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-count="7">0</span>
+                        <span class="stat-label">أشواط الطواف</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 21h18M5 21V7l8-4 8 4v14M9 10a1 1 0 011-1h4a1 1 0 011 1v10a1 1 0 01-1 1h-4a1 1 0 01-1-1v-10z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-count="7">0</span>
+                        <span class="stat-label">أشواط السعي</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">صلوات يومية</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-count="1">0</span>
+                        <span class="stat-label">لغات مدعومة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">خدماتنا</span>
+                <h2 class="section-title">كل ما تحتاجه لأداء مناسكك</h2>
+                <p class="section-description">أدوات شاملة مصممة لتسهيل رحلتك الروحانية</p>
+            </div>
+            
+            <div class="services-grid">
+                <a href="tawaf.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">دليل الطواف</h3>
+                    <p class="service-desc">إرشادات خطوة بخطوة لأداء الطواف الصحيح مع عداد الأشواط</p>
+                    <div class="service-link">
+                        <span>ابدأ الآن</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="sai.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <!-- Safa hill (left) -->
+                            <path d="M2 18L5 10L8 18" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Marwa hill (right) -->
+                            <path d="M16 18L19 10L22 18" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Path between hills -->
+                            <path d="M8 14h8" stroke-linecap="round"/>
+                            <!-- Walking figure -->
+                            <circle cx="12" cy="8" r="1.5"/>
+                            <path d="M12 9.5v3"/>
+                            <path d="M10.5 12.5l1.5 2 1.5-2"/>
+                            <!-- Movement arrows -->
+                            <path d="M9 14l-1.5-1M9 14l-1.5 1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 14l1.5-1M15 14l1.5 1" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">دليل السعي</h3>
+                    <p class="service-desc">مسار السعي بين الصفا والمروة مع الأدعية المأثورة</p>
+                    <div class="service-link">
+                        <span>ابدأ الآن</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="map.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a10 10 0 0110 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+                            <path d="M12 8v8M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">الخريطة التفاعلية</h3>
+                    <p class="service-desc">خريطة تفصيلية للحرم مع تحديد المواقع الهامة ومسارات الطوارئ</p>
+                    <div class="service-link">
+                        <span>عرض الخريطة</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="duas.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                            <path d="M8 7h8M8 11h6M8 15h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">مكتبة الأدعية</h3>
+                    <p class="service-desc">مجموعة شاملة من الأدعية والأذكار للطواف والسعي</p>
+                    <div class="service-link">
+                        <span>تصفح الأدعية</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="services.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <!-- Chat bubble -->
+                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">المساعد الذكي</h3>
+                    <p class="service-desc">إجابات فورية على استفساراتك حول المناسك</p>
+                    <div class="service-link">
+                        <span>اسأل الآن</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="map.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2v20M2 12h20"/>
+                            <path d="M12 2l3 6M12 2l-3 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">اتجاه القبلة</h3>
+                    <p class="service-desc">تحديد دقيق لاتجاه القبلة من أي مكان في العالم</p>
+                    <div class="service-link">
+                        <span>تحديد القبلة</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Level Selection -->
+    <section class="level-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">تجربة مخصصة</span>
+                <h2 class="section-title">اختر مستوى خبرتك</h2>
+                <p class="section-description">نقدم إرشادات مناسبة لكل مستوى</p>
+            </div>
+            
+            <div class="level-grid">
+                <button class="level-card" data-level="beginner">
+                    <div class="level-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="level-title">مبتدئ</h3>
+                    <p class="level-desc">أداء مناسكك لأول مرة؟ سنرشدك خطوة بخطوة</p>
+                    <ul class="level-features">
+                        <li>شرح مفصل لكل خطوة</li>
+                        <li>تنبيهات وتذكيرات</li>
+                        <li>أدعية كاملة</li>
+                    </ul>
+                </button>
+
+                <button class="level-card" data-level="experienced">
+                    <div class="level-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="level-title">متمرس</h3>
+                    <p class="level-desc">لديك خبرة سابقة؟ احصل على إرشادات موجزة</p>
+                    <ul class="level-features">
+                        <li>ملخص سريع</li>
+                        <li>تنبيهات للأخطاء الشائعة</li>
+                        <li>أدعية مختارة</li>
+                    </ul>
+                </button>
+
+                <button class="level-card" data-level="elderly">
+                    <div class="level-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="level-title">كبار السن</h3>
+                    <p class="level-desc">إرشادات خاصة مع مراعاة الظروف الصحية</p>
+                    <ul class="level-features">
+                        <li>مسارات ميسرة</li>
+                        <li>نصائح صحية</li>
+                        <li>أماكن الراحة</li>
+                    </ul>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Times Widget -->
+    <section class="prayer-section">
+        <div class="container">
+            <div class="prayer-widget">
+                <div class="prayer-header">
+                    <div class="prayer-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>مكة المكرمة</span>
+                    </div>
+                    <span class="prayer-date" id="prayerDate"></span>
+                </div>
+                <div class="prayer-times" id="prayerTimes">
+                    <!-- Will be populated by JS -->
+                </div>
+                <div class="next-prayer">
+                    <span>الصلاة القادمة:</span>
+                    <strong id="nextPrayerName">--</strong>
+                    <span id="nextPrayerTime">--:--</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Trigger -->
+    <button class="chatbot-trigger" id="chatbotTrigger" aria-label="المساعد الذكي">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+        <span class="chatbot-badge">مساعدة</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>قبلة</span>
+                    </a>
+                    <p class="footer-desc">دليلك الروحاني لأداء مناسك الحج والعمرة بسهولة ويسر</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="تويتر">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="يوتيوب">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="tawaf.html">دليل الطواف</a></li>
+                        <li><a href="sai.html">دليل السعي</a></li>
+                        <li><a href="map.html">الخريطة</a></li>
+                        <li><a href="duas.html">الأدعية</a></li>
+                        <li><a href="services.html">الخدمات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>معلومات</h4>
+                    <ul>
+                        <li><a href="about.html">عن قبلة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <path d="M22 6l-10 7L2 6"/>
+                            </svg>
+                            <a href="mailto:info@qiblah.sa">info@qiblah.sa</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            <a href="tel:920000000">920000000</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 قبلة. جميع الحقوق محفوظة.</p>
+                <p>متوافق مع رؤية السعودية 2030</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Emergency Modal -->
+    <div class="modal-overlay" id="emergencyModal">
+        <div class="modal emergency-modal">
+            <button class="modal-close" id="emergencyModalClose">&times;</button>
+            <div class="emergency-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                </svg>
+                <h2>وضع الطوارئ</h2>
+                <p>اختر نوع المساعدة التي تحتاجها</p>
+            </div>
+            <div class="emergency-options">
+                <button class="emergency-option" data-type="lost">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 8v4M12 16h.01"/>
+                        </svg>
+                    </div>
+                    <span>ضعت</span>
+                    <small>تحديد الموقع وأقرب نقطة مساعدة</small>
+                </button>
+                <button class="emergency-option" data-type="tired">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                        </svg>
+                    </div>
+                    <span>تعبت</span>
+                    <small>مكان جلوس + ماء + رسالة تهدئة</small>
+                </button>
+                <button class="emergency-option" data-type="medical">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <span>أحتاج إسعاف</span>
+                    <small>اتصال طوارئ مباشر</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div class="modal-overlay" id="chatbotModal">
+        <div class="modal chatbot-modal">
+            <button class="modal-close" id="chatbotModalClose">&times;</button>
+            <div class="chatbot-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+                <div>
+                    <h2>المساعد الذكي</h2>
+                    <p>اسألني عن أي شيء يتعلق بالطواف والسعي</p>
+                </div>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        <p>أهلاً وسهلاً! كيف يمكنني مساعدتك اليوم؟</p>
+                        <small>الآن</small>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="اكتب سؤالك هنا..." autocomplete="off">
+                <button type="submit" id="chatbotSend">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chatbot-suggestions">
+                <button class="suggestion" data-question="كيف أطوف؟">كيف أطوف؟</button>
+                <button class="suggestion" data-question="كم عدد أشواط السعي؟">كم عدد أشواط السعي؟</button>
+                <button class="suggestion" data-question="ماذا لو شككت في عدد الأشواط؟">شك في الأشواط</button>
+                <button class="suggestion" data-question="أين أقرب نقطة مساعدة؟">أقرب مساعدة</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

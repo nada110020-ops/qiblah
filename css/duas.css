@@ -1,0 +1,398 @@
+/* ============================================
+   DUAS PAGE STYLES
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--color-kaaba-green) 0%, var(--color-kaaba-dark) 100%);
+    color: var(--color-white);
+    border-bottom: none;
+}
+
+.page-header .breadcrumb a {
+    color: var(--color-gold);
+}
+
+.page-header .breadcrumb a:hover {
+    color: var(--color-gold-light);
+}
+
+.page-header .breadcrumb span:last-child {
+    color: var(--color-white);
+}
+
+.page-header .page-title {
+    color: var(--color-gold);
+}
+
+.page-header .page-subtitle {
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+/* Search Section */
+.search-section {
+    padding: var(--space-2xl) 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-sand-dark);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.search-box svg {
+    position: absolute;
+    left: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-muted);
+}
+
+.search-box input {
+    width: 100%;
+    padding: var(--space-md) var(--space-xl);
+    padding-left: calc(var(--space-md) + 20px + var(--space-md)); /* Add space for the icon */
+    border: 2px solid var(--color-sand-dark);
+    border-radius: var(--radius-full);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.search-box input:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.filter-tab {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--color-cream);
+    border: 2px solid transparent;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.filter-tab:hover {
+    background: var(--color-sand);
+}
+
+.filter-tab.active {
+    background: var(--color-kaaba-green);
+    color: var(--color-white);
+    border-color: var(--color-kaaba-green);
+}
+
+/* Duas Section */
+.duas-section {
+    padding: var(--space-4xl) 0;
+}
+
+.duas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.dua-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-sand-dark);
+    transition: all var(--transition-base);
+}
+
+.dua-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-gold);
+    transform: translateY(-3px);
+}
+
+.dua-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.dua-badge {
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.dua-badge.tawaf {
+    background: rgba(26, 77, 46, 0.1);
+    color: var(--color-kaaba-green);
+}
+
+.dua-badge.sai {
+    background: rgba(139, 115, 85, 0.1);
+    color: var(--color-stone);
+}
+
+.dua-badge.general {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold-dark);
+}
+
+.dua-badge.quran {
+    background: rgba(196, 30, 58, 0.1);
+    color: var(--color-emergency);
+}
+
+.dua-favorite {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cream);
+    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+}
+
+.dua-favorite:hover,
+.dua-favorite.active {
+    background: rgba(196, 30, 58, 0.1);
+    color: var(--color-emergency);
+}
+
+.dua-favorite.active svg {
+    fill: var(--color-emergency);
+}
+
+.dua-content {
+    margin-bottom: var(--space-lg);
+}
+
+.dua-arabic {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 2.2;
+    color: var(--color-kaaba-green);
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    border-right: 3px solid var(--color-gold);
+}
+
+.dua-translation {
+    font-size: 1rem;
+    color: var(--color-text);
+    text-align: center;
+    font-weight: 500;
+}
+
+.dua-source {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+}
+
+.dua-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: flex-end;
+}
+
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-sand);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.btn-copy svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-copy:hover {
+    background: var(--color-gold);
+    color: var(--color-kaaba-dark);
+}
+
+.btn-copy.copied {
+    background: var(--color-kaaba-green);
+    color: var(--color-white);
+}
+
+/* Tasbih Section */
+.tasbih-section {
+    padding: var(--space-4xl) 0;
+    background: linear-gradient(180deg, var(--color-sand) 0%, var(--color-cream) 100%);
+}
+
+.tasbih-widget {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.tasbih-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-kaaba-green);
+    margin-bottom: var(--space-xl);
+}
+
+.tasbih-header svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tasbih-display {
+    margin-bottom: var(--space-xl);
+}
+
+.tasbih-count {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    transition: all var(--transition-spring);
+}
+
+.tasbih-count.bump {
+    transform: scale(1.1);
+}
+
+.tasbih-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.tasbih-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-2xl);
+    background: linear-gradient(135deg, var(--color-kaaba-green) 0%, var(--color-kaaba-dark) 100%);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.tasbih-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tasbih-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(26, 77, 46, 0.4);
+}
+
+.tasbih-btn:active {
+    transform: translateY(0);
+}
+
+.tasbih-reset {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-sand);
+    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.tasbih-reset svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tasbih-reset:hover {
+    background: var(--color-emergency-light);
+    color: var(--color-white);
+}
+
+.tasbih-presets {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.preset-btn {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-cream);
+    border: 2px solid var(--color-sand-dark);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.preset-btn:hover,
+.preset-btn.active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-kaaba-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .duas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dua-arabic {
+        font-size: 1.125rem;
+    }
+    
+    .tasbih-count {
+        font-size: 4rem;
+    }
+}

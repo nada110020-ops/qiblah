@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الطواف | قبلة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tawaf.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="logo-text">قبلة</span>
+            </a>
+            
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="map.html" class="nav-link">الخريطة</a></li>
+                    <li><a href="tawaf.html" class="nav-link active">الطواف</a></li>
+                    <li><a href="sai.html" class="nav-link">السعي</a></li>
+                    <li><a href="duas.html" class="nav-link">الأدعية</a></li>
+                    <li><a href="services.html" class="nav-link">الخدمات</a></li>
+                    <li><a href="about.html" class="nav-link">عن قبلة</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="langToggle" aria-label="تغيير اللغة">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3v18"/>
+                    </svg>
+                    <span>AR</span>
+                </button>
+                <button class="emergency-btn" id="emergencyBtn" aria-label="طوارئ">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>دليل الطواف</span>
+            </div>
+            <h1 class="page-title">دليل الطواف الشامل</h1>
+            <p class="page-subtitle">إرشادات خطوة بخطوة لأداء الطواف الصحيح</p>
+        </div>
+    </section>
+
+    <!-- Tawaf Counter -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-widget">
+                <div class="counter-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <span>عداد الأشواط</span>
+                </div>
+                <div class="counter-display">
+                    <div class="current-shawt">
+                        <span class="number" id="currentShawt">0</span>
+                        <span class="label">الشوط الحالي</span>
+                    </div>
+                    <div class="total-shawt">
+                        <span class="number">7</span>
+                        <span class="label">المجموع</span>
+                    </div>
+                </div>
+                <div class="counter-controls">
+                    <button class="btn-control" id="decreaseBtn" aria-label="إنقاص">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                        </svg>
+                    </button>
+                    <button class="btn-control btn-reset" id="resetBtn" aria-label="إعادة تعيين">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </button>
+                    <button class="btn-control" id="increaseBtn" aria-label="زيادة">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="counter-progress">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-dots" id="progressDots">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+                <div class="counter-status" id="counterStatus">
+                    <span class="status-icon">🕋</span>
+                    <span class="status-text">ابدأ الطواف من الحجر الأسود</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tawaf Steps -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">خطوات الطواف</span>
+                <h2 class="section-title">كيف تطوف بالكعبة المشرفة</h2>
+            </div>
+            
+            <div class="steps-timeline">
+                <div class="step" data-step="1">
+                    <div class="step-marker">1</div>
+                    <div class="step-content">
+                        <h3>النية والطواف</h3>
+                        <p>استقبل الحجر الأسود واحجره بيمينك إن استطعت، وقل: "بسم الله والله أكبر، اللهم إيماناً بك وتصديقاً بكتابك ووفاءً بعهدك واتباعاً لسنة نبيك محمد صلى الله عليه وسلم"</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>إن لم تستطع استلام الحجر، فأشر إليه من بعيد</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="2">
+                    <div class="step-marker">2</div>
+                    <div class="step-content">
+                        <h3>اجعل الكعبة عن يسارك</h3>
+                        <p>ابدأ الطواف حول الكعبة مع جعلها على يسارك،طف عكس اتجاه عقارب الساعة. الكعبة يجب أن تكون دائماً على يسارك خلال جميع الأشواط.</p>
+                        <div class="step-visual">
+                            <svg viewBox="0 0 100 100" class="direction-diagram">
+                                <rect x="40" y="40" width="20" height="20" fill="#1a4d2e" stroke="#D4AF37" stroke-width="1"/>
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="3 3"/>
+                                <path d="M85 50 A35 35 0 0 1 50 85" fill="none" stroke="#D4AF37" stroke-width="1" marker-end="url(#arrowhead)"/>
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                        <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="3">
+                    <div class="step-marker">3</div>
+                    <div class="step-content">
+                        <h3>الدعاء بين الركن اليماني والحجر الأسود</h3>
+                        <p>بين الركن اليماني والحجر الأسود، قل: "ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار"</p>
+                        <div class="dua-card">
+                            <p class="dua-text">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+                            <button class="btn-audio" aria-label="استماع">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="4">
+                    <div class="step-marker">4</div>
+                    <div class="step-content">
+                        <h3>إكمال الأشواط السبعة</h3>
+                        <p>أكمل 7 أشواط، كل شوط يبدأ من الحجر الأسود وينتهي عنده. لا يوجد دعاء محدد للأشواط الأخرى، فادعُ بما تشاء من خير الدنيا والآخرة.</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>يمكنك قراءة القرآن أو ذكر الله أو الدعاء بما تشاء</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="5">
+                    <div class="step-marker">5</div>
+                    <div class="step-content">
+                        <h3>صلاة ركعتين خلف المقام</h3>
+                        <p>بعد إكمال الأشواط السبعة، صلِّ ركعتين خلف مقام إبراهيم إن تيسر، أو في أي مكان في المسجد الحرام. اقرأ في الأولى الفاتحة والكاافرون، وفي الثانية الفاتحة والإخلاص.</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>إن لم تستطع الصلاة خلف المقام بسبب الزحام، فصلِّ في أي مكان</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="6">
+                    <div class="step-marker">6</div>
+                    <div class="step-content">
+                        <h3>الشرب من ماء زمزم</h3>
+                        <p>اشرب من ماء زمزم وادعُ بالمأثور: "اللهم إني أسألك علماً نافعاً، ورزقاً واسعاً، وشفاءً من كل داء"</p>
+                        <div class="dua-card">
+                            <p class="dua-text">اللهم إني أسألك علماً نافعاً، ورزقاً واسعاً، وشفاءً من كل داء</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="mistakes-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">تنبيهات مهمة</span>
+                <h2 class="section-title">الأخطاء الشائعة في الطواف</h2>
+            </div>
+            
+            <div class="mistakes-grid">
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>الطواف من داخل حجر إسماعيل</h3>
+                    <p>حجر إسماعيل جزء من الكعبة، والطواف يجب أن يكون من خارجها. من طاف من داخله لم يصح طوافه.</p>
+                </div>
+                
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>المزاحمة الشديدة لاستلام الحجر</h3>
+                    <p>لا يجوز المزاحمة الشديدة التي تؤذي الآخرين. إن لم تستطع استلام الحجر، فأشر إليه وكبّر.</p>
+                </div>
+                
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>الشك في عدد الأشواط</h3>
+                    <p>إذا شككت في عدد الأشواط، ابنِ على اليقين (الأقل). مثلاً إذا شككت بين 5 و6، اعتبرها 5 وأتمم الباقي.</p>
+                </div>
+                
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>رفع الصوت بالدعاء</h3>
+                    <p>الأفضل عدم رفع الصوت بالدعاء حتى لا تزعج الآخرين. ادعُ بصوت منخفض أو في نفسك.</p>
+                </div>
+                
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>الطواف بدون طهارة</h3>
+                    <p>الطواف يحتاج إلى طهارة من الحدث الأصغر (الوضوء). من طاف بدون وضوء لم يصح طوافه.</p>
+                </div>
+                
+                <div class="mistake-card">
+                    <div class="mistake-icon mistake">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M15 9l-6 6M9 9l6 6"/>
+                        </svg>
+                    </div>
+                    <h3>تخصيص أدعية لكل شوط</h3>
+                    <p>لا يوجد دليل على تخصيص أدعية معينة لكل شوط. هذا من البدع. ادعُ بما تشاء من خير.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips for Elderly -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="tips-card">
+                <div class="tips-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <h2>نصائح لكبار السن وذوي الاحتياجات</h2>
+                </div>
+                <div class="tips-content">
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>استخدم الكراسي المتحركة المتوفرة مجاناً في جميع مداخل الحرم</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>اطف في الأدوار العلوية حيث يكون الزحام أقل</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>اختر الأوقات غير المزدحمة (بعد الفجر، بعد العشاء)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>لا تتردد في طلب المساعدة من المتطوعين المنتشرين في الحرم</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>خذ فترات راحة عند التعب، فالله لا يكلف نفساً إلا وسعها</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>يمكن للطواف من الطوابق العلوية لتجنب الزحام</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>قبلة</span>
+                    </a>
+                    <p class="footer-desc">دليلك الروحاني لأداء مناسك الحج والعمرة بسهولة ويسر</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 قبلة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/tawaf.js"></script>
+</body>
+</html>

@@ -1,0 +1,855 @@
+/* ============================================
+   MAP PAGE STYLES - Enhanced Leaflet Maps
+   ============================================ */
+
+.map-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--color-cream);
+}
+
+.map-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Leaflet Map Container */
+.leaflet-map-container {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    min-height: 700px;
+}
+
+.leaflet-map {
+    width: 100%;
+    height: 700px;
+    border-radius: var(--radius-xl);
+}
+
+/* Override Leaflet default styles for RTL */
+.leaflet-control-attribution {
+    direction: ltr;
+    text-align: left;
+}
+
+.leaflet-popup-content {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Map Info Overlay */
+.map-info-overlay {
+    position: absolute;
+    top: var(--space-lg);
+    left: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.current-status {
+    display: flex;
+    gap: var(--space-md);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    pointer-events: auto;
+    border: 1px solid rgba(26, 77, 46, 0.1);
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.status-icon {
+    font-size: 1rem;
+}
+
+/* Qibla Compass */
+.qibla-compass {
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+}
+
+.compass-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid var(--color-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+}
+
+.qibla-arrow {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    animation: compass-pulse 3s ease-in-out infinite;
+}
+
+.qibla-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+.compass-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-kaaba-green);
+    text-align: center;
+    white-space: nowrap;
+}
+
+@keyframes compass-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Map Controls */
+.map-controls {
+    position: sticky;
+    top: 100px;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.control-group {
+    margin-bottom: var(--space-xl);
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-group h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.control-group h4::before {
+    content: '🎛️';
+    font-size: 1rem;
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--color-cream);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.toggle-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+    background: var(--color-sand);
+    transform: translateX(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn.active {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--color-gold);
+    color: var(--color-gold-dark);
+    transform: translateX(-2px);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: var(--space-xs) 0;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm);
+}
+
+.checkbox-label:hover {
+    color: var(--color-kaaba-green);
+    background: rgba(26, 77, 46, 0.05);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-gold);
+    cursor: pointer;
+}
+
+.btn-location,
+.btn-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--color-kaaba-green) 0%, var(--color-kaaba-dark) 100%);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(26, 77, 46, 0.2);
+}
+
+.btn-center {
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    color: var(--color-kaaba-dark);
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+}
+
+.btn-location:hover,
+.btn-center:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-location svg,
+.btn-center svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Location Panel */
+.location-panel {
+    position: fixed;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    right: auto;
+    max-width: 350px;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-xl);
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 1100;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.location-panel.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.panel-close {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    background: var(--color-sand);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+}
+
+.panel-close:hover {
+    background: var(--color-emergency);
+    color: var(--color-white);
+    transform: rotate(90deg);
+}
+
+.panel-content h3 {
+    font-size: 1.25rem;
+    color: var(--color-kaaba-green);
+    margin-bottom: var(--space-md);
+    font-weight: 700;
+}
+
+.panel-content p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.panel-content .location-coordinates {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-family: monospace;
+    background: var(--color-sand);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    margin: var(--space-md) 0;
+}
+
+.panel-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.btn-action {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-kaaba-green);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+}
+
+.btn-action:hover {
+    background: var(--color-gold);
+    color: var(--color-kaaba-dark);
+    transform: translateY(-1px);
+}
+
+.btn-action.emergency {
+    background: var(--color-emergency);
+}
+
+.btn-action.emergency:hover {
+    background: #8B1538;
+    color: var(--color-white);
+}
+
+.btn-action svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Enhanced Legend */
+.map-legend {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 250px;
+    z-index: 1050;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.map-legend h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.map-legend h4::before {
+    content: '🗺️';
+    font-size: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    transition: all var(--transition-fast);
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+}
+
+.legend-item:hover {
+    color: var(--color-kaaba-green);
+    transform: translateX(-2px);
+    background: rgba(26, 77, 46, 0.05);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.legend-color.kaaba {
+    background: linear-gradient(135deg, #1a4d2e, #0d2818);
+    border: 2px solid #D4AF37;
+    animation: kaaba-legend-glow 3s ease-in-out infinite;
+}
+
+@keyframes kaaba-legend-glow {
+    0%, 100% { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.6); }
+}
+
+.legend-color.stone {
+    background: #1a1a1a;
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+}
+
+.legend-color.maqam {
+    background: linear-gradient(45deg, #D4AF37, #F4D03F);
+    border-radius: var(--radius-xs);
+}
+
+.legend-color.safa-marwa {
+    background: linear-gradient(135deg, #8B7355, #6B5840);
+    border-radius: 50%;
+}
+
+.legend-color.zamzam {
+    background: linear-gradient(135deg, #4A90A4, #2E5C6E);
+    border-radius: 50%;
+}
+
+.legend-color.gate {
+    background: #C41E3A;
+    border-radius: 50%;
+}
+
+.legend-color.emergency {
+    background: radial-gradient(#C41E3A, #8B1538);
+    border-radius: 50%;
+    animation: emergency-glow 2s ease-in-out infinite;
+}
+
+.legend-color.services {
+    background: linear-gradient(135deg, #1a4d2e, #2d7a2d);
+    border-radius: 50%;
+}
+
+@keyframes emergency-glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(196, 30, 58, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(196, 30, 58, 0.8); }
+}
+
+/* Instructions removed as per user request */
+
+/* Custom Leaflet Popup Styles */
+.leaflet-popup-content-wrapper {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.leaflet-popup-content {
+    margin: var(--space-md);
+    line-height: 1.6;
+    font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .map-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-controls {
+        position: relative;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+        max-height: none;
+    }
+    
+    .instructions-overlay {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+    }
+    
+    .instruction-card {
+        opacity: 1;
+        transform: none;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .instructions-overlay {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-legend {
+        display: none;
+    }
+    
+    .location-panel {
+        left: var(--space-md);
+        right: var(--space-md);
+        max-width: none;
+    }
+    
+    .leaflet-map {
+        height: 500px;
+    }
+    
+    .leaflet-map-container {
+        min-height: 500px;
+    }
+    
+    .current-status {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .qibla-compass {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .qibla-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kaaba-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .map-info-overlay {
+        left: var(--space-md);
+        right: var(--space-md);
+    }
+    
+    .instruction-card {
+        max-width: none;
+        padding: var(--space-md);
+    }
+}
+
+/* Loading animation */
+.leaflet-map-container::before {
+    content: "جارٍ تحميل خريطة الكعبة المشرفة...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    font-family: 'Noto Sans Arabic', sans-serif;
+    color: var(--color-kaaba-green);
+    font-weight: 600;
+}
+
+.leaflet-map-container.loaded::before {
+    display: none;
+}
+
+/* Custom Marker Styles */
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+.kaaba-marker {
+    z-index: 1000 !important;
+}
+
+.marker-kaaba {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marker-kaaba svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    animation: kaaba-marker-glow 3s ease-in-out infinite;
+}
+
+@keyframes kaaba-marker-glow {
+    0%, 100% {
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.8));
+        transform: scale(1.1);
+    }
+}
+
+.marker-label {
+    background: rgba(26, 77, 46, 0.9);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #D4AF37;
+}
+
+.marker-sacred,
+.marker-service,
+.marker-gate,
+.marker-emergency {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marker-sacred svg,
+.marker-service svg,
+.marker-gate svg,
+.marker-emergency svg {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: all var(--transition-fast);
+}
+
+.marker-emergency svg {
+    animation: emergency-marker-pulse 2s ease-in-out infinite;
+}
+
+@keyframes emergency-marker-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 4px 8px rgba(196, 30, 58, 0.6));
+        transform: scale(1.1);
+    }
+}
+
+/* Kaaba Pulse Ring */
+.kaaba-pulse {
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    animation: kaaba-pulse-ring 3s ease-out infinite;
+}
+
+@keyframes kaaba-pulse-ring {
+    0% {
+        width: 60px;
+        height: 60px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+    }
+}
+
+/* User Location Marker */
+.user-location-marker {
+    background: transparent;
+    border: none;
+}
+
+.user-marker {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.user-marker-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #1a4d2e;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.user-marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background: rgba(26, 77, 46, 0.2);
+    border-radius: 50%;
+    animation: user-marker-pulse 2s ease-out infinite;
+}
+
+@keyframes user-marker-pulse {
+    0% {
+        width: 32px;
+        height: 32px;
+        opacity: 0.6;
+    }
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+    }
+}
+
+/* Tawaf Direction Circle */
+.tawaf-circle {
+    animation: tawaf-direction-flow 4s linear infinite;
+}
+
+@keyframes tawaf-direction-flow {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 40;
+    }
+}
+
+.tawaf-arrow {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    animation: tawaf-arrow-rotate 8s linear infinite;
+}
+
+@keyframes tawaf-arrow-rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hover Effects for Markers */
+.leaflet-marker-icon:hover {
+    z-index: 1000;
+}
+
+.marker-kaaba:hover svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 1));
+}
+
+.marker-sacred:hover svg,
+.marker-service:hover svg,
+.marker-gate:hover svg {
+    transform: scale(1.15);
+}
+
+.marker-emergency:hover svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 12px rgba(196, 30, 58, 0.8));
+}

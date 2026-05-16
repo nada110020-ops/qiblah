@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل السعي | قبلة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sai.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="logo-text">قبلة</span>
+            </a>
+            
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="map.html" class="nav-link">الخريطة</a></li>
+                    <li><a href="tawaf.html" class="nav-link">الطواف</a></li>
+                    <li><a href="sai.html" class="nav-link active">السعي</a></li>
+                    <li><a href="duas.html" class="nav-link">الأدعية</a></li>
+                    <li><a href="services.html" class="nav-link">الخدمات</a></li>
+                    <li><a href="about.html" class="nav-link">عن قبلة</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="langToggle" aria-label="تغيير اللغة">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3v18"/>
+                    </svg>
+                    <span>AR</span>
+                </button>
+                <button class="emergency-btn" id="emergencyBtn" aria-label="طوارئ">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>دليل السعي</span>
+            </div>
+            <h1 class="page-title">دليل السعي الشامل</h1>
+            <p class="page-subtitle">إرشادات خطوة بخطوة للسعي بين الصفا والمروة</p>
+        </div>
+    </section>
+
+    <!-- Sai Counter -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-widget">
+                <div class="counter-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 21h18M5 21V7l8-4 8 4v14M9 10a1 1 0 011-1h4a1 1 0 011 1v10a1 1 0 01-1 1h-4a1 1 0 01-1-1v-10z"/>
+                    </svg>
+                    <span>عداد أشواط السعي</span>
+                </div>
+                <div class="counter-display">
+                    <div class="current-shawt">
+                        <span class="number" id="currentShawt">0</span>
+                        <span class="label">الشوط الحالي</span>
+                    </div>
+                    <div class="total-shawt">
+                        <span class="number">7</span>
+                        <span class="label">المجموع</span>
+                    </div>
+                </div>
+                <div class="counter-controls">
+                    <button class="btn-control" id="decreaseBtn" aria-label="إنقاص">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                        </svg>
+                    </button>
+                    <button class="btn-control btn-reset" id="resetBtn" aria-label="إعادة تعيين">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </button>
+                    <button class="btn-control" id="increaseBtn" aria-label="زيادة">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="counter-progress">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-dots" id="progressDots">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+                <div class="counter-status" id="counterStatus">
+                    <span class="status-icon">⛰️</span>
+                    <span class="status-text">ابدأ السعي من الصفا</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sai Steps -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">خطوات السعي</span>
+                <h2 class="section-title">كيف تسعى بين الصفا والمروة</h2>
+            </div>
+            
+            <div class="sai-visual">
+                <div class="sai-diagram">
+                    <div class="safa-marker">
+                        <span class="marker-label">الصفا</span>
+                        <div class="marker-icon">⛰️</div>
+                    </div>
+                    <div class="sai-path">
+                        <div class="path-line"></div>
+                        <div class="path-arrows">
+                            <span class="arrow">←</span>
+                            <span class="arrow">←</span>
+                            <span class="arrow">←</span>
+                        </div>
+                        <div class="green-light">
+                            <span>الميل الأخضر</span>
+                            <small>يسن الهرولة للرجال</small>
+                        </div>
+                    </div>
+                    <div class="marwa-marker">
+                        <span class="marker-label">المروة</span>
+                        <div class="marker-icon">⛰️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="steps-timeline">
+                <div class="step" data-step="1">
+                    <div class="step-marker">1</div>
+                    <div class="step-content">
+                        <h3>البدء من الصفا</h3>
+                        <p>اصعد على الصفا حتى ترى الكعبة، واستقبل القبلة وارفع يديك وقل: "بسم الله، وما توفيقي إلا بالله، عليه توكلت وإليه أنيب"</p>
+                        <div class="dua-card">
+                            <p class="dua-text">إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ ۖ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا</p>
+                            <small>البقرة: 158</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="2">
+                    <div class="step-marker">2</div>
+                    <div class="step-content">
+                        <h3>الدعاء على الصفا</h3>
+                        <p>احمد الله وأثنِ عليه، وكبّر الله ثلاثاً، ثم ادعُ بما تشاء من خير الدنيا والآخرة. هذا الموضع مستجاب الدعاء.</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>طوّل الدعاء هنا، فهذا من مواطن الإجابة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="3">
+                    <div class="step-marker">3</div>
+                    <div class="step-content">
+                        <h3>المشي إلى المروة</h3>
+                        <p>انزل من الصفا وتوجه إلى المروة. إذا وصلت إلى الميل الأخضر (العلامات الخضراء)، فالرجال يسرعون في المشي (الهرولة)، أما النساء فيمشين كالمعتاد.</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>الهرولة: مشي سريع مع مقاربة الخطى، دون جري</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="4">
+                    <div class="step-marker">4</div>
+                    <div class="step-content">
+                        <h3>الدعاء في الطريق</h3>
+                        <p>ادعُ في طريقك بما تشاء. لا يوجد دعاء محدد، لكن يمكنك قول: "رب اغفر وارحم وتجاوز عما تعلم، إنك أنت الأعز الأكرم"</p>
+                        <div class="dua-card">
+                            <p class="dua-text">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="5">
+                    <div class="step-marker">5</div>
+                    <div class="step-content">
+                        <h3>الوقوف على المروة</h3>
+                        <p>اصعد على المروة حتى ترى الكعبة، واستقبل القبلة وارفع يديك وادعُ كما دعوت على الصفا. هذا يُعتبر شوطاً واحداً.</p>
+                        <div class="step-tip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <span>الشوط الأول: من الصفا إلى المروة. الثاني: من المروة إلى الصفا</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="6">
+                    <div class="step-marker">6</div>
+                    <div class="step-content">
+                        <h3>إكمال الأشواط السبعة</h3>
+                        <p>أكمل 7 أشواط، تنتهي عند المروة. الأشواط الفردية (1، 3، 5، 7) من الصفا للمروة، والأشواط الزوجية (2، 4، 6) من المروة للصفا.</p>
+                        <div class="shawt-summary">
+                            <div class="shawt-item">
+                                <span class="shawt-num">1</span>
+                                <span class="shawt-path">الصفا → المروة</span>
+                            </div>
+                            <div class="shawt-item">
+                                <span class="shawt-num">2</span>
+                                <span class="shawt-path">المروة → الصفا</span>
+                            </div>
+                            <div class="shawt-item">
+                                <span class="shawt-num">3</span>
+                                <span class="shawt-path">الصفا → المروة</span>
+                            </div>
+                            <div class="shawt-item">
+                                <span class="shawt-num">4</span>
+                                <span class="shawt-path">المروة → الصفا</span>
+                            </div>
+                            <div class="shawt-item">
+                                <span class="shawt-num">5</span>
+                                <span class="shawt-path">الصفا → المروة</span>
+                            </div>
+                            <div class="shawt-item">
+                                <span class="shawt-num">6</span>
+                                <span class="shawt-path">المروة → الصفا</span>
+                            </div>
+                            <div class="shawt-item completed">
+                                <span class="shawt-num">7</span>
+                                <span class="shawt-path">الصفا → المروة ✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step" data-step="7">
+                    <div class="step-marker">7</div>
+                    <div class="step-content">
+                        <h3>الدعاء الختامي</h3>
+                        <p>بعد إكمال الأشواط السبعة، ادعُ الله أن يتقبل منك، واحمد الله على توفيقك. ثم احلق أو قصّر شعرك (للرجال)، وتقصر المرأة من شعرها قدر أنملة.</p>
+                        <div class="dua-card">
+                            <p class="dua-text">اللهم تقبل مني واجعله حجاً مبروراً وسعياً مشكوراً وذنباً مغفوراً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Notes -->
+    <section class="notes-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">تنبيهات مهمة</span>
+                <h2 class="section-title">أحكام وملاحظات مهمة في السعي</h2>
+            </div>
+            
+            <div class="notes-grid">
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>شرط الطهارة</h3>
+                    <p>السعي لا يشترط له الوضوء، لكن الأفضل أن تكون على طهارة.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>كبار السن</h3>
+                    <p>يجوز لكبار السن وأهل الأعذار السعي من الطابق العلوي أو استخدام الكرسي المتحرك.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>الهرولة للرجال</h3>
+                    <p>الهرولة سنة للرجال فقط بين العلمين الأخضرين، أما النساء فيمشين كالمعتاد.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>الشك في الأشواط</h3>
+                    <p>إذا شككت في عدد الأشواط، ابنِ على اليقين (الأقل) وأتمم الباقي.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>الترتيب</h3>
+                    <p>يشترط ترتيب الأشواط، فلا يجوز تقديم شوط على آخر.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 10h18M6 15h12"/>
+                        </svg>
+                    </div>
+                    <h3>الموالاة</h3>
+                    <p>يستحب التتابع في الأشواط دون فصل طويل، فإن فصل لعذر فلا حرج.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M25 8 L25 15 M25 35 L25 42 M8 25 L15 25 M35 25 L42 25" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="18" y="18" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>قبلة</span>
+                    </a>
+                    <p class="footer-desc">دليلك الروحاني لأداء مناسك الحج والعمرة بسهولة ويسر</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 قبلة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/sai.js"></script>
+</body>
+</html>

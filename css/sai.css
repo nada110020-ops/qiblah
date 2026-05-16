@@ -1,0 +1,535 @@
+/* ============================================
+   SAI PAGE STYLES
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-2xl);
+    background: linear-gradient(135deg, var(--color-kaaba-green) 0%, var(--color-kaaba-dark) 100%);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: var(--color-gold);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-gold-light);
+}
+
+.breadcrumb span:last-child {
+    color: var(--color-white);
+}
+
+.page-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-sm);
+    color: var(--color-gold);
+}
+
+.page-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Counter Section */
+.counter-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-cream);
+}
+
+.counter-widget {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--space-2xl);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-sand-dark);
+}
+
+.counter-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-kaaba-green);
+    margin-bottom: var(--space-xl);
+}
+
+.counter-header svg {
+    width: 24px;
+    height: 24px;
+}
+
+.counter-display {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3xl);
+    margin-bottom: var(--space-xl);
+}
+
+.current-shawt,
+.total-shawt {
+    text-align: center;
+}
+
+.current-shawt .number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    transition: all var(--transition-spring);
+}
+
+.current-shawt .number.bump {
+    transform: scale(1.2);
+}
+
+.current-shawt .label,
+.total-shawt .label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: var(--space-sm);
+}
+
+.total-shawt .number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+.counter-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.btn-control {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-sand);
+    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.btn-control:hover {
+    background: var(--color-gold);
+    color: var(--color-kaaba-dark);
+    transform: scale(1.1);
+}
+
+.btn-control:active {
+    transform: scale(0.95);
+}
+
+.btn-control svg {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-reset {
+    background: var(--color-emergency-light);
+    color: var(--color-white);
+}
+
+.btn-reset:hover {
+    background: var(--color-emergency);
+}
+
+.counter-progress {
+    margin-bottom: var(--space-xl);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--color-sand);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width var(--transition-base);
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-sand-dark);
+    transition: all var(--transition-fast);
+}
+
+.progress-dot.active {
+    background: var(--color-gold);
+    transform: scale(1.2);
+}
+
+.progress-dot.completed {
+    background: var(--color-kaaba-green);
+}
+
+.counter-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--color-sand);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.status-icon {
+    font-size: 1.25rem;
+}
+
+/* Sai Visual Diagram */
+.sai-visual {
+    max-width: 800px;
+    margin: var(--space-3xl) auto;
+    padding: var(--space-2xl);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.sai-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+}
+
+.safa-marker,
+.marwa-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.marker-label {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-kaaba-green);
+}
+
+.marker-icon {
+    font-size: 2.5rem;
+}
+
+.sai-path {
+    flex: 1;
+    position: relative;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.path-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+    transform: translateY(-50%);
+    border-radius: var(--radius-full);
+}
+
+.path-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.path-arrows .arrow {
+    color: var(--color-kaaba-green);
+    font-size: 2rem;
+    animation: arrow-move 2s ease-in-out infinite;
+}
+
+.path-arrows .arrow:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.path-arrows .arrow:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes arrow-move {
+    0%, 100% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(-10px); opacity: 0.5; }
+}
+
+.green-light {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-white);
+    border: 1px solid var(--color-kaaba-green);
+    border-radius: var(--radius-full);
+    z-index: 1;
+}
+
+.green-light span {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-kaaba-green);
+}
+
+.green-light small {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+/* Styles for step tips */
+.step-tip {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: rgba(26, 77, 46, 0.05);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-kaaba-green);
+}
+
+.step-tip svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-kaaba-green);
+    flex-shrink: 0;
+}
+
+/* Shawt Summary */
+.shawt-summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+}
+
+.shawt-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.shawt-item.completed {
+    background: rgba(26, 77, 46, 0.1);
+    border: 1px solid var(--color-kaaba-green);
+}
+
+.shawt-num {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-sand);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    color: var(--color-text);
+    flex-shrink: 0;
+}
+
+.shawt-item.completed .shawt-num {
+    background: var(--color-kaaba-green);
+    color: var(--color-white);
+}
+
+.shawt-path {
+    color: var(--color-text-light);
+}
+
+.shawt-item.completed .shawt-path {
+    color: var(--color-kaaba-green);
+    font-weight: 600;
+}
+
+/* Notes Section */
+.notes-section {
+    padding: var(--space-4xl) 0;
+    background: var(--color-sand);
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.note-card {
+    padding: var(--space-xl);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.note-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-kaaba-green) 0%, var(--color-kaaba-dark) 100%);
+    border-radius: var(--radius-full);
+    color: var(--color-gold);
+}
+
+.note-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.note-card h3 {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.note-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sai-diagram {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+    
+    .sai-path {
+        width: 100%;
+        height: 100px;
+    }
+    
+    .path-line {
+        width: 4px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+    
+    .path-arrows {
+        flex-direction: column;
+        width: auto;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    
+    .path-arrows .arrow {
+        animation: arrow-move-vertical 2s ease-in-out infinite;
+    }
+    
+    @keyframes arrow-move-vertical {
+        0%, 100% { transform: translateY(0); opacity: 1; }
+        50% { transform: translateY(10px); opacity: 0.5; }
+    }
+    
+    .green-light {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: var(--space-md);
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .sai-visual {
+        padding: var(--space-lg);
+    }
+    
+    .marker-label {
+        font-size: 1rem;
+    }
+    
+    .marker-icon {
+        font-size: 2rem;
+    }
+}
